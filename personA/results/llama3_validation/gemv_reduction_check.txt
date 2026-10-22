@@ -1,0 +1,9 @@
+Row    0: PUs=2, Expected=-3.0, Recovered=-3.0 PASS
+Row    1: PUs=3, Expected=-6.0, Recovered=-6.0 PASS
+Row    2: PUs=3, Expected=-2.0, Recovered=-2.0 PASS
+Row    3: PUs=2, Expected=2.0, Recovered=2.0 PASS
+Row   72: PUs=2, Expected=-2.0, Recovered=-2.0 PASS
+Row   73: PUs=3, Expected=2.0, Recovered=2.0 PASS
+Row   74: PUs=3, Expected=-8.0, Recovered=-8.0 PASS
+Row 4095: PUs=2, Expected=-3.0, Recovered=-3.0 PASS
+Sampled PIM partition/reduction arithmetic: PASS

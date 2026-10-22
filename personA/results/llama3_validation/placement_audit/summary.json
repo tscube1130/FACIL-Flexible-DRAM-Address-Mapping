@@ -1,0 +1,91 @@
+{
+  "classification": "standalone, paper-grounded address-placement validation; not DRAMsim3 or PIM performance",
+  "paper_anchors": {
+    "2048x8192": 3,
+    "2048x65536": 5
+  },
+  "geometry": {
+    "channels": 4,
+    "ranks_per_channel": 2,
+    "banks_per_rank": 16,
+    "huge_page_bytes": 2097152,
+    "AiM_chunk_columns": 1024,
+    "FP16_bytes": 2,
+    "physical_DRAM_transfer_bytes": 32,
+    "separate_DRAMsim3_proxy_transaction_bytes": 128
+  },
+  "cases": [
+    {
+      "layer": "q_o",
+      "rows": 4096,
+      "cols": 4096,
+      "mapid": 2,
+      "partition": false,
+      "rounded_selector_row_bytes": 8192,
+      "compact_logical_row_bytes": 8192,
+      "checked_chunks": 16384,
+      "checked_128B_transactions": 262144,
+      "distinct_pus_per_row_histogram": {
+        "1": 4096
+      },
+      "rows_crossing_2MiB_page": 0,
+      "csv": "personA/results/llama3_validation/placement_audit/q_o_row_placement.csv"
+    },
+    {
+      "layer": "k_v",
+      "rows": 1024,
+      "cols": 4096,
+      "mapid": 2,
+      "partition": false,
+      "rounded_selector_row_bytes": 8192,
+      "compact_logical_row_bytes": 8192,
+      "checked_chunks": 4096,
+      "checked_128B_transactions": 65536,
+      "distinct_pus_per_row_histogram": {
+        "1": 1024
+      },
+      "rows_crossing_2MiB_page": 0,
+      "csv": "personA/results/llama3_validation/placement_audit/k_v_row_placement.csv"
+    },
+    {
+      "layer": "ffn_gate_up",
+      "rows": 14336,
+      "cols": 4096,
+      "mapid": 2,
+      "partition": false,
+      "rounded_selector_row_bytes": 8192,
+      "compact_logical_row_bytes": 8192,
+      "checked_chunks": 57344,
+      "checked_128B_transactions": 917504,
+      "distinct_pus_per_row_histogram": {
+        "1": 14336
+      },
+      "rows_crossing_2MiB_page": 0,
+      "csv": "personA/results/llama3_validation/placement_audit/ffn_gate_up_row_placement.csv"
+    },
+    {
+      "layer": "ffn_down",
+      "rows": 4096,
+      "cols": 14336,
+      "mapid": 3,
+      "partition": true,
+      "rounded_selector_row_bytes": 32768,
+      "compact_logical_row_bytes": 28672,
+      "checked_chunks": 57344,
+      "checked_128B_transactions": 917504,
+      "distinct_pus_per_row_histogram": {
+        "2": 2048,
+        "3": 2048
+      },
+      "rows_crossing_2MiB_page": 48,
+      "csv": "personA/results/llama3_validation/placement_audit/ffn_down_row_placement.csv"
+    }
+  ],
+  "not_verified": [
+    "Native LPDDR5 protocol",
+    "DRAMsim3 decoder matches MapID mapping",
+    "PIM instruction timing, register contention, reductions",
+    "Bank lock-step scheduling and interference",
+    "Whether compact 14336-column row-stride is optimal or explicitly intended by the paper"
+  ]
+}

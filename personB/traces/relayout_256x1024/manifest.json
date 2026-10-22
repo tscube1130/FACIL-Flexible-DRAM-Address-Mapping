@@ -1,0 +1,22 @@
+{
+  "matrix_shape": [
+    256,
+    1024
+  ],
+  "element_bytes": 2,
+  "matrix_bytes": 524288,
+  "transaction_bytes": 128,
+  "transactions_per_stage": 4096,
+  "total_read_and_write_bytes": 1048576,
+  "source_address_range": [
+    "0x0",
+    "0x80000"
+  ],
+  "destination_address_range": [
+    "0x10000000",
+    "0x10080000"
+  ],
+  "read_trace": "personB/traces/relayout_256x1024/copy_read.trace",
+  "write_trace": "personB/traces/relayout_256x1024/copy_write.trace",
+  "method": "two separate serialized DRAM-only traffic stages; no logical permutation or compute"
+}

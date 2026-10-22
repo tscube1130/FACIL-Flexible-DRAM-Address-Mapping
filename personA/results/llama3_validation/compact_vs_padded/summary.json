@@ -1,0 +1,71 @@
+{
+  "test": "FACIL FFN-down compact vs padded row placement + CBLAS leading dimension",
+  "geometry": {
+    "matrix_rows": 4096,
+    "logical_matrix_cols": 14336,
+    "fp16_bytes_per_element": 2,
+    "channels": 4,
+    "ranks_per_channel": 2,
+    "banks_per_rank": 16,
+    "huge_page_bytes": 2097152,
+    "PIM_chunk_cols": 1024,
+    "DRAM_transfer_bytes": 32
+  },
+  "mapid": 3,
+  "partition": true,
+  "rounded_selector_row_bytes": 32768,
+  "source_mapper_sha256": "c7c4969a8f60220bffdfa79ac2f288016366c3da2ecb32385be1f877e46ba000",
+  "compact": {
+    "fp16_stride_columns": 14336,
+    "fp16_stride_bytes": 28672,
+    "allocated_footprint_MiB": 112.0,
+    "chunks_checked": 57344,
+    "PUs_per_row_histogram": {
+      "2": 2048,
+      "3": 2048
+    },
+    "row_start_chunk_offset_within_PU_histogram": {
+      "0": 1024,
+      "2": 1024,
+      "4": 1024,
+      "6": 1024
+    },
+    "rows_with_first_chunk_nonzero_DRAM_rowlo": 3072,
+    "rows_spanning_multiple_ranks_or_banks": 1536,
+    "rows_crossing_2MiB_page": 48
+  },
+  "padded": {
+    "fp16_stride_columns": 16384,
+    "fp16_stride_bytes": 32768,
+    "allocated_footprint_MiB": 128.0,
+    "chunks_checked": 57344,
+    "PUs_per_row_histogram": {
+      "2": 4096
+    },
+    "row_start_chunk_offset_within_PU_histogram": {
+      "0": 4096
+    },
+    "rows_with_first_chunk_nonzero_DRAM_rowlo": 0,
+    "rows_spanning_multiple_ranks_or_banks": 0,
+    "rows_crossing_2MiB_page": 0
+  },
+  "numpy_strided_numerical_check": "PASS (16 sampled rows)",
+  "standard_blas_sgemm": {
+    "status": "PASS",
+    "library": "libblas.so.3",
+    "precision": "FP32 for API/stride semantics, not native FP16",
+    "M_sample": 16,
+    "N_output": 1,
+    "K": 14336,
+    "lda": 16384,
+    "max_abs_error": 0.0
+  },
+  "incorrect_compact_lda_on_padded_memory_exposes_padding": true,
+  "not_verified": [
+    "PIM cycle-level lock-step scheduling or input-register broadcasts",
+    "Whether the paper explicitly mandates 32-KiB physical row padding",
+    "Unmodified SoC GEMM API compatibility: padded matrix needs lda=16384",
+    "FP16 GEMM performance or native LPDDR5 timing",
+    "Actual DRAMsim3 mapid-aware physical controller"
+  ]
+}

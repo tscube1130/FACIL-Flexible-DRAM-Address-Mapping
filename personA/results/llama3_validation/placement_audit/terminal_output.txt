@@ -1,0 +1,8 @@
+PASS paper Fig. 10 anchors (2 channels x 1 rank x 16 banks): MapID 3, MapID 5
+Evaluation geometry: 4 channels x 2 ranks x 16 banks/rank; 2MiB page, FP16, AiM (1,1024)
+q_o           4096x4096  MapID=2 partition=False chunks=16,384 PUs-per-row={1: 4096} page-crossing-rows=0 PASS
+k_v           1024x4096  MapID=2 partition=False chunks=4,096 PUs-per-row={1: 1024} page-crossing-rows=0 PASS
+ffn_gate_up  14336x4096  MapID=2 partition=False chunks=57,344 PUs-per-row={1: 14336} page-crossing-rows=0 PASS
+ffn_down      4096x14336 MapID=3 partition=True  chunks=57,344 PUs-per-row={2: 2048, 3: 2048} page-crossing-rows=48 PASS
+Saved: personA/results/llama3_validation/placement_audit/summary.json
+No mapper source or DRAMsim3 config was modified.

@@ -1,0 +1,4 @@
+assumed_chunk_ns,linear_only_single_token_prefill_us,total_matrix_weight_MiB,total_waves,modeled_total_vector_io_us
+50.0,0.7350000000000001,2.0,12,0.135
+100.0,1.3350000000000002,2.0,12,0.135
+200.0,2.535,2.0,12,0.135

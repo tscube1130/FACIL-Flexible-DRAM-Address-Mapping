@@ -1,0 +1,22 @@
+{
+  "matrix_shape": [
+    4096,
+    4096
+  ],
+  "element_bytes": 2,
+  "matrix_bytes": 33554432,
+  "transaction_bytes": 128,
+  "transactions_per_stage": 262144,
+  "total_read_and_write_bytes": 67108864,
+  "source_address_range": [
+    "0x0",
+    "0x2000000"
+  ],
+  "destination_address_range": [
+    "0x10000000",
+    "0x12000000"
+  ],
+  "read_trace": "personB/traces/llama3_q_o/copy_read.trace",
+  "write_trace": "personB/traces/llama3_q_o/copy_write.trace",
+  "method": "two separate serialized DRAM-only traffic stages; no logical permutation or compute"
+}

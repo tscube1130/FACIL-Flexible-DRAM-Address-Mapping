@@ -1,0 +1,44 @@
+{
+  "classification": "illustrative analytical PIM GEMV, NOT measured or paper-calibrated",
+  "model": "two-layer FP16 MLP, 1024 -> 512 -> 1024, 1 token",
+  "layers": [
+    {
+      "name": "linear_1",
+      "M_rows": 512,
+      "K_cols": 1024
+    },
+    {
+      "name": "linear_2",
+      "M_rows": 1024,
+      "K_cols": 512
+    }
+  ],
+  "paper_grounding": "FACIL paper section II-B, AiM chunk (1,1024) in FP16",
+  "scenario_assumptions": {
+    "channels": 4,
+    "ranks_per_channel": 2,
+    "banks_per_rank": 16,
+    "ideal_parallel_pus": 128,
+    "pim_chunk_cols": 1024,
+    "assumed_per_wave_chunk_ns": [
+      50.0,
+      100.0,
+      200.0
+    ],
+    "external_peak_GBps": 204.8,
+    "input_vector_replication": "one copy to each rank",
+    "execution": "serialized waves + vector input/output transfers"
+  },
+  "method": "sum_layer(ceil(M/PUs)*t_wave + (K*dtype*num_ranks+M*dtype)/BW_ext)",
+  "excluded": [
+    "ACT/PRE commands",
+    "PIM instruction/control overhead",
+    "PIM input register contention",
+    "reduction overhead",
+    "nonlinear activations",
+    "attention",
+    "normalization",
+    "other LLM layers"
+  ],
+  "interpretation": "Only a PIM-executed, one-token prefill linear-component scenario. Ordinary decode GEMV belongs to TTLT, not SoC prefill TTFT. Not full model TTFT."
+}

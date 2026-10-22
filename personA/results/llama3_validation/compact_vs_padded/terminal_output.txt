@@ -1,0 +1,14 @@
+EVALUATION GEOMETRY: 2MiB pages, 4CH x 2R x 16 banks/rank, AiM 1024 FP16 elements per chunk
+MATRIX: 4096x14336 FP16 | MapID=3 | partition=True
+COMPACT: stride=28 KiB, footprint=112 MiB, PUs/row={2: 2048, 3: 2048}, row-start offsets (chunks)={0: 1024, 2: 1024, 4: 1024, 6: 1024}, page-crossings=48 PASS
+PADDED: stride=32 KiB, footprint=128 MiB, PUs/row={2: 4096}, row-start offsets (chunks)={0: 4096}, page-crossings=0 PASS
+FULL-PLACEMENT CHECKS: 57,344 chunks/layout; same DRAM row and PU per chunk; reversible: PASS
+NUMPY STRIDED GEMV: PASS (16 sampled rows, no native timing)
+STANDARD_BLAS_SGEMM: PASS (libblas.so.3; lda=16384 where applicable)
+WRONG_LDA_NEGATIVE_CONTROL: PASS
+CAVEAT: Alignment/stride validation only; NOT a proof of PIM lock-step hardware execution.
+CAVEAT: Padded layout needs a non-default lda; transparent compact GEMM is NOT demonstrated.
+SAVED: personA/results/llama3_validation/compact_vs_padded/summary.json
+SAVED: personA/results/llama3_validation/compact_vs_padded/sampled_row_placement.csv
+MAPPER_SOURCE_UNCHANGED: PASS
+SEND BACK: terminal_output.txt + summary.json (or paste both)
