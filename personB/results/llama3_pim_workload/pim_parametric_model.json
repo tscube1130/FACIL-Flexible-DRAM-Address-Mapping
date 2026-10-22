@@ -1,0 +1,10 @@
+{
+  "classification": "Symbolic analytical PIM GEMV model, not measured timing",
+  "effective_slot_cycles": null,
+  "compact_ms_per_effective_cycle": 0.01664,
+  "padded_ms_per_effective_cycle": 0.01728,
+  "additional_ms_per_effective_cycle": 0.00064,
+  "other_overheads_ms": null,
+  "absolute_latency_ms": null,
+  "conclusion": "Padded layout breaks even only if its overhead savings exceed the extra slot-service cost."
+}

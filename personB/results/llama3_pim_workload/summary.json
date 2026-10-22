@@ -1,0 +1,51 @@
+{
+  "classification": "analytical chunk workload, NOT simulated PIM timing",
+  "geometry": "4 channels x 2 ranks x 16 banks, AiM (1,1024)",
+  "records": [
+    {
+      "layer": "q_o",
+      "mapid": 2,
+      "logical_chunks": 16384,
+      "active_pus": 128,
+      "min_chunks_per_pu": 128,
+      "max_chunks_per_pu": 128,
+      "idealized_min_pim_slots": 128
+    },
+    {
+      "layer": "k_v",
+      "mapid": 2,
+      "logical_chunks": 4096,
+      "active_pus": 128,
+      "min_chunks_per_pu": 32,
+      "max_chunks_per_pu": 32,
+      "idealized_min_pim_slots": 32
+    },
+    {
+      "layer": "ffn_gate_up",
+      "mapid": 2,
+      "logical_chunks": 57344,
+      "active_pus": 128,
+      "min_chunks_per_pu": 448,
+      "max_chunks_per_pu": 448,
+      "idealized_min_pim_slots": 448
+    },
+    {
+      "layer": "ffn_down_compact",
+      "mapid": 3,
+      "logical_chunks": 57344,
+      "active_pus": 128,
+      "min_chunks_per_pu": 448,
+      "max_chunks_per_pu": 448,
+      "idealized_min_pim_slots": 448
+    },
+    {
+      "layer": "ffn_down_padded",
+      "mapid": 3,
+      "logical_chunks": 57344,
+      "active_pus": 128,
+      "min_chunks_per_pu": 384,
+      "max_chunks_per_pu": 512,
+      "idealized_min_pim_slots": 512
+    }
+  ]
+}

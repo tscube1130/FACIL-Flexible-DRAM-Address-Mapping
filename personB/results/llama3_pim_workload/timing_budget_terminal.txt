@@ -1,0 +1,32 @@
+{
+  "classification": "Analytical PIM workload and timing budget",
+  "model": "Llama3-8B",
+  "decoder_blocks": 32,
+  "PIM_type": "AiM-style (1,1024) FP16",
+  "total_PIM_units": 128,
+  "DRAM_config": "LPDDR4 protocol / LPDDR5-style timing proxy",
+  "tCK_ns": 0.3125,
+  "tRAS_cycles": 135.0,
+  "tRP_cycles": 58.0,
+  "conditional_bank_row_turnaround_ns": 60.3125,
+  "compact_slots_per_block": 1664,
+  "padded_slots_per_block": 1728,
+  "compact_slots_per_decode_token": 53248,
+  "padded_slots_per_decode_token": 55296,
+  "effective_PIM_slot_latency_ns": null,
+  "PIM_GEMV_latency_ms": null,
+  "unknown_components": [
+    "PIM compute command latency",
+    "Input-vector loading",
+    "Partial-sum reduction",
+    "Bank lock-step scheduling and synchronization"
+  ],
+  "limitations": [
+    "Operation slots are optimistic workload counts",
+    "DRAM turnaround timing is not PIM MAC latency",
+    "No native LPDDR5 PIM simulation performed",
+    "No PIM latency or speedup is claimed"
+  ]
+}
+
+Saved: personB/results/llama3_pim_workload/timing_budget.json

@@ -1,0 +1,38 @@
+{
+  "geometry": "4 channels x 2 ranks x 16 banks",
+  "matrix": "4096x14336 FP16",
+  "mapid": 3,
+  "compact": {
+    "layout": "compact",
+    "stride_columns": 14336,
+    "useful_chunks": 57344,
+    "distinct_command_groups": 25088,
+    "active_banks_per_group_histogram": {
+      "2": 17920,
+      "3": 7168
+    },
+    "mean_active_banks_per_group": 2.2857142857142856,
+    "max_groups_per_channel_rank": 3136,
+    "classification": "Structural co-issuance proxy, not PIM timing"
+  },
+  "padded": {
+    "layout": "padded",
+    "stride_columns": 16384,
+    "useful_chunks": 57344,
+    "distinct_command_groups": 3584,
+    "active_banks_per_group_histogram": {
+      "16": 3584
+    },
+    "mean_active_banks_per_group": 16.0,
+    "max_groups_per_channel_rank": 512,
+    "classification": "Structural co-issuance proxy, not PIM timing"
+  },
+  "total_group_reduction_factor": 7.0,
+  "worst_channel_rank_group_reduction_factor": 6.125,
+  "limitations": [
+    "Assumes a common DRAM row and vector segment per command",
+    "Does not execute PIM instructions",
+    "Does not model latency, masking, synchronization or reductions",
+    "Does not establish end-to-end performance"
+  ]
+}

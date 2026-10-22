@@ -1,0 +1,14 @@
+Llama3-8B: 32 decoder blocks, seven linear matrices/block
+MODEL: peak-roofline prefill + serialized DRAM copy proxy
+NOTE: not measured TTFT; excludes attention/nonlinear overhead
+NOTE: FFN-down reuses FFN gate/up sequential size proxy
+Total modeled copy proxy: 243.810240 ms
+
+Tokens | SoC roofline | Baseline scenario | FACIL scenario | Ratio
+     8 |      68.362 |           312.172 |         69.798 |  4.47x
+    16 |      68.567 |           312.377 |         70.007 |  4.46x
+    32 |      68.977 |           312.787 |         70.425 |  4.44x
+    64 |      69.796 |           313.606 |         71.262 |  4.40x
+   128 |      71.434 |           315.244 |         72.934 |  4.32x
+
+Saved: /home/cse/DRAMsim3/DRAMsim3-master/personB/results/llama3_ttft/scenario.csv

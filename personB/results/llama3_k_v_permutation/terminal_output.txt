@@ -1,0 +1,4 @@
+READ  65,536/65,536 transactions | completion <= 480,768 cycles | time <= 150.240 us | BW >= 55.83 GB/s
+WRITE 65,536/65,536 transactions | completion <= 232,448 cycles | time <= 72.640 us | BW >= 115.48 GB/s
+SERIALIZED COPY time <= 222.880 us
+Saved: personB/results/llama3_k_v_permutation/summary.json

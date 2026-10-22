@@ -1,0 +1,4 @@
+READ  917,504/917,504 transactions | completion <= 3,303,776 cycles | time <= 1032.430 us | BW >= 113.75 GB/s
+WRITE 917,504/917,504 transactions | completion <= 3,260,096 cycles | time <= 1018.780 us | BW >= 115.28 GB/s
+SERIALIZED COPY time <= 2051.210 us
+Saved: personB/results/llama3_ffn_gate_up/summary.json

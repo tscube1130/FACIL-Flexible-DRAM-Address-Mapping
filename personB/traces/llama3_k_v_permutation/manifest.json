@@ -1,0 +1,36 @@
+{
+  "matrix_shape": [
+    1024,
+    4096
+  ],
+  "element_bytes": 2,
+  "matrix_bytes": 8388608,
+  "transaction_bytes": 128,
+  "transactions_per_stage": 65536,
+  "total_read_and_write_bytes": 16777216,
+  "source_address_range": [
+    "0x0",
+    "0x800000"
+  ],
+  "destination_address_range": [
+    "0x10000000",
+    "0x10800000"
+  ],
+  "read_trace": "personB/traces/llama3_k_v_permutation/copy_read.trace",
+  "write_trace": "personB/traces/llama3_k_v_permutation/copy_write.trace",
+  "method": "first-touch unique-128B baseline source read order from a reference 32B PIM-storage permutation; sequential destination writes; ideal coalescing; no reshape computation or timing for permutation",
+  "paper_reference_soc_field_order": "row:rank:column:bank:channel:offset",
+  "standalone_reference_pim_mapid": 2,
+  "partition_required": false,
+  "tested_32B_fragments": 262144,
+  "verified_unique_128B_blocks": 65536,
+  "adjacent_incrementing_source_read_pairs": 7,
+  "nonsequential_source_read_pairs": 65528,
+  "important_limitations": [
+    "DRAMsim3 internal address decoder NOT changed to this reference mapping",
+    "DRAMsim3 has no per-huge-page MapID in this experiment",
+    "Each 128B block issued once on first touch: ideal reuse/coalescing",
+    "Read and write stages separate; no CPU/GPU permutation cost",
+    "LPDDR4 protocol with LPDDR5-style timing proxy; not native LPDDR5"
+  ]
+}
