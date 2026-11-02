@@ -1,0 +1,5 @@
+stage,access_order,transactions,bytes,cycles_approx,duration_us_approx,bandwidth_GBs_approx,percent_external_peak,completion_definition
+read,original,32768,4194304,202752,63.36,66.198,32.32,reads completed
+read,sequential,32768,4194304,66560,20.8,201.6492,98.46,reads completed
+write,original,32768,4194304,66560,20.8,201.6492,98.46,write commands issued
+write,sequential,32768,4194304,66560,20.8,201.6492,98.46,write commands issued

@@ -1,0 +1,11 @@
+{
+  "base_commit": "1ecfcd5aad1ebf10af8a04c0cdbeebaff93aa062",
+  "branch": "codex/facil-coursework-release",
+  "remote_main_at_fetch": "1ecfcd5aad1ebf10af8a04c0cdbeebaff93aa062",
+  "repository": "https://github.com/tscube1130/FACIL-Flexible-DRAM-Address-Mapping",
+  "preserved_history": true,
+  "local_changes": "Overlaid current native/config/experiment changes and essential untracked evidence onto an independent local clone; original tracked removals honored.",
+  "remote_comparison": "Remote main matched local base; no collaborator changes discarded.",
+  "private_preparation_snapshot": "Initial status, binary patch, complete file snapshots and commit details retained locally in ignored .release_audit/.",
+  "structure_only": "Path/import/CLI-output safety and Catch compiler compatibility; no scientific formula or assumption changes."
+}

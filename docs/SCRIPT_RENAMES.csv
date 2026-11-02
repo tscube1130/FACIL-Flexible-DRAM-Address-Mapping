@@ -1,0 +1,17 @@
+original_script_label,release_path
+compare_facil_reads.py,experiments/facil/compare_facil_reads.py
+facil_batch_feasibility.py,experiments/extension/batch_dispatch_feasibility.py
+facil_batch_exp12.py,experiments/extension/batch_crossover_sensitivity.py
+facil_batch_exp34.py,experiments/extension/batch_trace_switching.py
+facil_batch_exp5.py,experiments/extension/relayout_bandwidth_diagnostic.py
+facil_pim_gemv_analytical.py,experiments/analytical/pim_gemv_analytical.py
+facil_step3_ffn_reads.py,experiments/facil/facil_weight_access_comparison.py
+facil_step6_figures.py,experiments/facil/facil_comparison_figures.py
+generate_verified_baseline_traces_2k.py,experiments/baseline/generate_verified_baseline_traces_2k.py
+llama3_soc_gemm_roofline.py,experiments/analytical/soc_gemm_roofline.py
+measure_relayout.py,experiments/baseline/measure_relayout.py
+pim_llama3_timing_budget.py,experiments/analytical/pim_llama3_timing_budget.py
+ttft_llama3_baseline.py,experiments/analytical/ttft_llama3_baseline.py
+verify_baseline_relayout.py,experiments/baseline/verify_baseline_relayout.py
+facil_mapper.py,mapping/facil_mapper.py
+facil_pim_figures.py,experiments/analytical/plot_pim_sensitivity.py

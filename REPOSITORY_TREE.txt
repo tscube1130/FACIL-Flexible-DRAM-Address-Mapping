@@ -1,0 +1,496 @@
+FACIL repository — tracked release tree
+
+397 files; build, scratch and credential directories are excluded.
+
+FACIL-Flexible-DRAM-Address-Mapping/
+├── .github/
+│   └── workflows/
+│       └── validate.yml
+├── configs/
+│   ├── DDR3_1Gb_x8_1333.ini
+│   ├── DDR3_4Gb_x16_1600.ini
+│   ├── DDR3_4Gb_x16_1866.ini
+│   ├── DDR3_4Gb_x4_1600.ini
+│   ├── DDR3_4Gb_x4_1866.ini
+│   ├── DDR3_4Gb_x8_1600.ini
+│   ├── DDR3_4Gb_x8_1866.ini
+│   ├── DDR3_8Gb_x16_1600.ini
+│   ├── DDR3_8Gb_x16_1866.ini
+│   ├── DDR3_8Gb_x4_1600.ini
+│   ├── DDR3_8Gb_x4_1866.ini
+│   ├── DDR3_8Gb_x8_1600.ini
+│   ├── DDR3_8Gb_x8_1866.ini
+│   ├── DDR4_4Gb_x16_1866.ini
+│   ├── DDR4_4Gb_x16_2133.ini
+│   ├── DDR4_4Gb_x16_2133_2.ini
+│   ├── DDR4_4Gb_x16_2400.ini
+│   ├── DDR4_4Gb_x16_2400_2.ini
+│   ├── DDR4_4Gb_x16_2666.ini
+│   ├── DDR4_4Gb_x16_2666_2.ini
+│   ├── DDR4_4Gb_x4_1866.ini
+│   ├── DDR4_4Gb_x4_2133.ini
+│   ├── DDR4_4Gb_x4_2133_2.ini
+│   ├── DDR4_4Gb_x4_2400.ini
+│   ├── DDR4_4Gb_x4_2400_2.ini
+│   ├── DDR4_4Gb_x4_2666.ini
+│   ├── DDR4_4Gb_x4_2666_2.ini
+│   ├── DDR4_4Gb_x8_1866.ini
+│   ├── DDR4_4Gb_x8_2133.ini
+│   ├── DDR4_4Gb_x8_2133_2.ini
+│   ├── DDR4_4Gb_x8_2400.ini
+│   ├── DDR4_4Gb_x8_2400_2.ini
+│   ├── DDR4_4Gb_x8_2666.ini
+│   ├── DDR4_4Gb_x8_2666_2.ini
+│   ├── DDR4_8Gb_x16_1866.ini
+│   ├── DDR4_8Gb_x16_2133.ini
+│   ├── DDR4_8Gb_x16_2133_2.ini
+│   ├── DDR4_8Gb_x16_2400.ini
+│   ├── DDR4_8Gb_x16_2400_2.ini
+│   ├── DDR4_8Gb_x16_2666.ini
+│   ├── DDR4_8Gb_x16_2666_2.ini
+│   ├── DDR4_8Gb_x16_2933.ini
+│   ├── DDR4_8Gb_x16_2933_2.ini
+│   ├── DDR4_8Gb_x16_3200.ini
+│   ├── DDR4_8Gb_x4_1866.ini
+│   ├── DDR4_8Gb_x4_2133.ini
+│   ├── DDR4_8Gb_x4_2133_2.ini
+│   ├── DDR4_8Gb_x4_2400.ini
+│   ├── DDR4_8Gb_x4_2400_2.ini
+│   ├── DDR4_8Gb_x4_2666.ini
+│   ├── DDR4_8Gb_x4_2666_2.ini
+│   ├── DDR4_8Gb_x4_2933.ini
+│   ├── DDR4_8Gb_x4_2933_2.ini
+│   ├── DDR4_8Gb_x4_3200.ini
+│   ├── DDR4_8Gb_x8_1866.ini
+│   ├── DDR4_8Gb_x8_2133.ini
+│   ├── DDR4_8Gb_x8_2133_2.ini
+│   ├── DDR4_8Gb_x8_2400.ini
+│   ├── DDR4_8Gb_x8_2400_2.ini
+│   ├── DDR4_8Gb_x8_2666.ini
+│   ├── DDR4_8Gb_x8_2666_2.ini
+│   ├── DDR4_8Gb_x8_2933.ini
+│   ├── DDR4_8Gb_x8_2933_2.ini
+│   ├── DDR4_8Gb_x8_3200.ini
+│   ├── GDDR5X_8Gb_x32.ini
+│   ├── GDDR5_1Gb_x32.ini
+│   ├── GDDR5_8Gb_x32.ini
+│   ├── GDDR6_8Gb_x16.ini
+│   ├── HBM1_4Gb_x128.ini
+│   ├── HBM2_4Gb_x128.ini
+│   ├── HBM2_8Gb_x128.ini
+│   ├── HBM_4Gb_x128.ini
+│   ├── HMC2_8GB_4Lx16.ini
+│   ├── HMC_2GB_4Lx16.ini
+│   ├── HMC_2GB_4Lx16_dummy.ini
+│   ├── HMC_4GB_4Lx16.ini
+│   ├── LPDDR3_8Gb_x32_1333.ini
+│   ├── LPDDR3_8Gb_x32_1600.ini
+│   ├── LPDDR3_8Gb_x32_1866.ini
+│   ├── LPDDR4_8Gb_x16_2400.ini
+│   ├── LPDDR5_6400_APPROX.ini
+│   ├── LPDDR5_6400_APPROX_8K_HISTORICAL.ini
+│   ├── LPDDR5_6400_APPROX_v1.ini
+│   ├── ST-1.2x.ini
+│   ├── ST-1.5x.ini
+│   ├── ST-2.0x.ini
+│   ├── ddr3_debug.ini
+│   ├── ddr4_debug.ini
+│   └── lpddr_2Gb_x16.ini
+├── docs/
+│   ├── provenance/
+│   │   ├── FACIL_PROJECT_LOG.md
+│   │   ├── RELEASE_PREPARATION.json
+│   │   ├── RELEASE_VALIDATION.json
+│   │   ├── TRACE_CHECKSUMS.json
+│   │   └── VALIDATED_ENVIRONMENT.json
+│   ├── upstream/
+│   │   └── DRAMSIM3_README.md
+│   ├── LIMITATIONS.md
+│   ├── METHODOLOGY.md
+│   ├── REPORT_RECONCILIATION.md
+│   ├── REPRODUCIBILITY.md
+│   ├── RESULTS_INDEX.md
+│   └── SCRIPT_RENAMES.csv
+├── experiments/
+│   ├── analytical/
+│   │   ├── __init__.py
+│   │   ├── pim_gemv_analytical.py
+│   │   ├── pim_llama3_timing_budget.py
+│   │   ├── plot_pim_sensitivity.py
+│   │   ├── soc_gemm_roofline.py
+│   │   └── ttft_llama3_baseline.py
+│   ├── baseline/
+│   │   ├── __init__.py
+│   │   ├── generate_verified_baseline_traces_2k.py
+│   │   ├── measure_relayout.py
+│   │   └── verify_baseline_relayout.py
+│   ├── extension/
+│   │   ├── __init__.py
+│   │   ├── batch_crossover_sensitivity.py
+│   │   ├── batch_dispatch_feasibility.py
+│   │   ├── batch_trace_switching.py
+│   │   └── relayout_bandwidth_diagnostic.py
+│   ├── facil/
+│   │   ├── __init__.py
+│   │   ├── compare_facil_reads.py
+│   │   ├── facil_comparison_figures.py
+│   │   ├── facil_weight_access_comparison.py
+│   │   └── generate_matched_read_traces.py
+│   ├── __init__.py
+│   └── paths.py
+├── ext/
+│   ├── fmt/
+│   │   ├── include/
+│   │   │   └── fmt/
+│   │   │       ├── core.h
+│   │   │       ├── format-inl.h
+│   │   │       └── format.h
+│   │   └── LICENSE.rst
+│   └── headers/
+│       ├── INIHLICENSE.txt
+│       ├── INIReader.h
+│       ├── args.hxx
+│       ├── catch.hpp
+│       └── json.hpp
+├── mapping/
+│   ├── check_lockstep_groups.py
+│   ├── facil_mapper.py
+│   ├── validate_placement.py
+│   └── visualize_mapper.py
+├── paper/
+│   ├── figures/
+│   │   ├── batch_crossover_heatmaps.png
+│   │   ├── batch_dispatch_two_scenarios.png
+│   │   ├── batch_dynamic_trace.png
+│   │   ├── batch_switching_hmax.png
+│   │   ├── exp5_sequential_bandwidth.png
+│   │   ├── ffn_padding_sample_comparison.png
+│   │   ├── pim_gemv_per_token.png
+│   │   ├── pim_prefill_sensitivity.png
+│   │   ├── placement_alignment.pdf
+│   │   ├── read_vs_relayout.png
+│   │   ├── ttft_comparison.png
+│   │   └── ttft_speedups.png
+│   ├── README.txt
+│   ├── main.tex
+│   └── report.pdf
+├── results/
+│   ├── analytical/
+│   │   ├── facil_pim_gemv_analytical/
+│   │   │   ├── pim_gemv_model.json
+│   │   │   ├── pim_gemv_per_token.png
+│   │   │   ├── pim_gemv_prefill_sensitivity.csv
+│   │   │   ├── pim_prefill_sensitivity.pdf
+│   │   │   └── pim_prefill_sensitivity.png
+│   │   ├── llama3_pim_workload/
+│   │   │   ├── pim_parametric_model.json
+│   │   │   ├── summary.json
+│   │   │   ├── terminal_output.txt
+│   │   │   ├── timing_budget.json
+│   │   │   └── timing_budget_terminal.txt
+│   │   ├── llama3_soc_gemm_analytical/
+│   │   │   ├── assumptions_and_results.json
+│   │   │   ├── gemm_details_P128.json
+│   │   │   ├── gemm_details_P16.json
+│   │   │   ├── gemm_details_P32.json
+│   │   │   ├── gemm_details_P64.json
+│   │   │   ├── gemm_details_P8.json
+│   │   │   └── soc_gemm_roofline.csv
+│   │   └── llama3_ttft/
+│   │       └── scenario.csv
+│   ├── baseline/
+│   │   ├── llama3_ffn_gate_up/
+│   │   │   ├── read/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   ├── dramsim3.txt
+│   │   │   │   └── dramsim3epoch.json
+│   │   │   ├── write/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   ├── dramsim3.txt
+│   │   │   │   └── dramsim3epoch.json
+│   │   │   ├── summary.json
+│   │   │   └── terminal_output.txt
+│   │   ├── llama3_k_v/
+│   │   │   ├── read/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   └── dramsim3.txt
+│   │   │   ├── write/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   └── dramsim3.txt
+│   │   │   ├── input_manifest.json
+│   │   │   ├── summary.json
+│   │   │   └── terminal_output.txt
+│   │   ├── llama3_q_o/
+│   │   │   ├── read/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   └── dramsim3.txt
+│   │   │   ├── write/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   └── dramsim3.txt
+│   │   │   ├── input_manifest.json
+│   │   │   ├── summary.json
+│   │   │   └── terminal_output.txt
+│   │   ├── verified_baseline_ffn_down_2k/
+│   │   │   ├── read/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   ├── dramsim3.txt
+│   │   │   │   └── dramsim3epoch.json
+│   │   │   ├── write/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   ├── dramsim3.txt
+│   │   │   │   └── dramsim3epoch.json
+│   │   │   ├── summary.json
+│   │   │   └── terminal_output.txt
+│   │   ├── verified_baseline_ffn_gate_up_2k/
+│   │   │   ├── read/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   ├── dramsim3.txt
+│   │   │   │   └── dramsim3epoch.json
+│   │   │   ├── write/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   ├── dramsim3.txt
+│   │   │   │   └── dramsim3epoch.json
+│   │   │   ├── summary.json
+│   │   │   └── terminal_output.txt
+│   │   ├── verified_baseline_k_v_2k/
+│   │   │   ├── read/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   └── dramsim3.txt
+│   │   │   ├── write/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   └── dramsim3.txt
+│   │   │   ├── summary.json
+│   │   │   └── terminal_output.txt
+│   │   └── verified_baseline_q_o_2k/
+│   │       ├── read/
+│   │       │   ├── dramsim3.json
+│   │       │   ├── dramsim3.txt
+│   │       │   └── dramsim3epoch.json
+│   │       ├── write/
+│   │       │   ├── dramsim3.json
+│   │       │   └── dramsim3.txt
+│   │       ├── summary.json
+│   │       └── terminal_output.txt
+│   ├── extension/
+│   │   ├── facil_batch_decode_feasibility/
+│   │   │   ├── assumptions.json
+│   │   │   ├── batch_dispatch_feasibility.png
+│   │   │   ├── batch_sweep.csv
+│   │   │   └── crossovers.csv
+│   │   ├── facil_batch_exp12/
+│   │   │   ├── assumptions.json
+│   │   │   ├── batch_sweep.csv
+│   │   │   ├── crossover_illustrative_20ms.png
+│   │   │   ├── crossover_optimistic_100ns.png
+│   │   │   ├── crossovers.csv
+│   │   │   ├── latency_illustrative_20ms.png
+│   │   │   └── latency_optimistic_100ns.png
+│   │   ├── facil_batch_exp34/
+│   │   │   ├── assumptions.json
+│   │   │   ├── dynamic_policy_results.csv
+│   │   │   ├── overhead_illustrative_20ms_falling.png
+│   │   │   ├── overhead_illustrative_20ms_oscillating.png
+│   │   │   ├── overhead_illustrative_20ms_rising.png
+│   │   │   ├── overhead_optimistic_100ns_falling.png
+│   │   │   ├── overhead_optimistic_100ns_oscillating.png
+│   │   │   ├── overhead_optimistic_100ns_rising.png
+│   │   │   ├── switching_overhead_limits.csv
+│   │   │   └── weight_memory_comparison.csv
+│   │   └── facil_batch_exp5/
+│   │       ├── native_read_original/
+│   │       │   ├── dramsim3.json
+│   │       │   └── dramsim3.txt
+│   │       ├── native_read_sequential/
+│   │       │   ├── dramsim3.json
+│   │       │   └── dramsim3.txt
+│   │       ├── native_write_original/
+│   │       │   ├── dramsim3.json
+│   │       │   └── dramsim3.txt
+│   │       ├── native_write_sequential/
+│   │       │   ├── dramsim3.json
+│   │       │   └── dramsim3.txt
+│   │       ├── traces/
+│   │       │   ├── read_original.trace
+│   │       │   ├── read_sequential.trace
+│   │       │   ├── write_original.trace
+│   │       │   └── write_sequential.trace
+│   │       ├── assumptions.json
+│   │       ├── bandwidth_diagnostic.csv
+│   │       └── bandwidth_diagnostic.png
+│   ├── facil/
+│   │   ├── facil_native_validation/
+│   │   │   ├── mixed_run/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   └── dramsim3.txt
+│   │   │   ├── channels_expected.txt
+│   │   │   ├── expected.tsv
+│   │   │   ├── mixed.trace
+│   │   │   └── pages.txt
+│   │   ├── facil_step2_check/
+│   │   │   ├── conventional/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   └── dramsim3.txt
+│   │   │   ├── facil/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   └── dramsim3.txt
+│   │   │   ├── page_map.txt
+│   │   │   └── reads.trace
+│   │   ├── facil_step3_ffn_down_2k/
+│   │   │   ├── conventional/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   ├── dramsim3.txt
+│   │   │   │   └── dramsim3epoch.json
+│   │   │   ├── facil/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   ├── dramsim3.txt
+│   │   │   │   └── dramsim3epoch.json
+│   │   │   ├── comparison.json
+│   │   │   └── pages.txt
+│   │   ├── facil_step3_ffn_gate_up_2k/
+│   │   │   ├── conventional/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   ├── dramsim3.txt
+│   │   │   │   └── dramsim3epoch.json
+│   │   │   ├── facil/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   ├── dramsim3.txt
+│   │   │   │   └── dramsim3epoch.json
+│   │   │   ├── comparison.json
+│   │   │   └── pages.txt
+│   │   ├── facil_step3_k_v_2k/
+│   │   │   ├── conventional/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   └── dramsim3.txt
+│   │   │   ├── facil/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   └── dramsim3.txt
+│   │   │   ├── timing_baseline/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   └── dramsim3.txt
+│   │   │   ├── timing_facil/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   └── dramsim3.txt
+│   │   │   ├── matched_read_timing.json
+│   │   │   └── pages.txt
+│   │   ├── facil_step3_q_o_2k/
+│   │   │   ├── conventional/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   └── dramsim3.txt
+│   │   │   ├── facil/
+│   │   │   │   ├── dramsim3.json
+│   │   │   │   ├── dramsim3.txt
+│   │   │   │   └── dramsim3epoch.json
+│   │   │   ├── comparison.json
+│   │   │   └── pages.txt
+│   │   ├── facil_step6_comparison/
+│   │   │   ├── comparison_notes.md
+│   │   │   ├── read_vs_relayout.png
+│   │   │   ├── ttft_comparison.csv
+│   │   │   ├── ttft_comparison.png
+│   │   │   └── ttft_speedups.png
+│   │   └── padding_negative_evidence/
+│   │       ├── comparison.json
+│   │       └── ffn_padding_sample_comparison.png
+│   └── mapping/
+│       ├── llama3_validation/
+│       │   ├── compact_vs_padded/
+│       │   │   ├── sampled_row_placement.csv
+│       │   │   ├── summary.json
+│       │   │   └── terminal_output.txt
+│       │   ├── lockstep_grouping/
+│       │   │   └── summary.json
+│       │   ├── placement_audit/
+│       │   │   ├── ffn_down_row_placement.csv
+│       │   │   ├── ffn_gate_up_row_placement.csv
+│       │   │   ├── k_v_row_placement.csv
+│       │   │   ├── q_o_row_placement.csv
+│       │   │   ├── summary.json
+│       │   │   └── terminal_output.txt
+│       │   ├── 1024x4096.txt
+│       │   ├── 14336x4096.txt
+│       │   ├── 4096x14336.txt
+│       │   ├── 4096x4096.txt
+│       │   └── gemv_reduction_check.txt
+│       ├── mapid3_8K_columns.png
+│       └── mapid5_64K_columns.png
+├── scripts/
+│   ├── batch_run.py
+│   ├── final_PowerTemperature_map.py
+│   ├── heatmap.py
+│   ├── parse_config.py
+│   ├── plot_stats.py
+│   ├── prepare_reproduction.py
+│   ├── trace_gen.py
+│   ├── validate_release.py
+│   └── validation.py
+├── src/
+│   ├── bankstate.cc
+│   ├── bankstate.h
+│   ├── channel_state.cc
+│   ├── channel_state.h
+│   ├── command_queue.cc
+│   ├── command_queue.h
+│   ├── common.cc
+│   ├── common.h
+│   ├── configuration.cc
+│   ├── configuration.h
+│   ├── controller.cc
+│   ├── controller.h
+│   ├── cpu.cc
+│   ├── cpu.h
+│   ├── dram_system.cc
+│   ├── dram_system.h
+│   ├── dramsim3.h
+│   ├── hmc.cc
+│   ├── hmc.h
+│   ├── main.cc
+│   ├── memory_system.cc
+│   ├── memory_system.h
+│   ├── refresh.cc
+│   ├── refresh.h
+│   ├── simple_stats.cc
+│   ├── simple_stats.h
+│   ├── sp_ienv.c
+│   ├── thermal.cc
+│   ├── thermal.h
+│   ├── thermal_config.h
+│   ├── thermal_replay.cc
+│   ├── thermal_replay.h
+│   ├── thermal_solver.c
+│   ├── timing.cc
+│   └── timing.h
+├── tests/
+│   ├── native/
+│   │   └── verify_facil_decoder.cc
+│   ├── example.trace
+│   ├── test_config.cc
+│   ├── test_dramsys.cc
+│   ├── test_evidence.py
+│   ├── test_hmcsys.cc
+│   └── test_mapper.py
+├── traces/
+│   ├── llama3_k_v_permutation/
+│   │   ├── copy_read.trace
+│   │   ├── copy_write.trace
+│   │   └── manifest.json
+│   ├── verified_baseline_ffn_down_2k/
+│   │   └── manifest.json
+│   ├── verified_baseline_ffn_gate_up_2k/
+│   │   └── manifest.json
+│   ├── verified_baseline_k_v_2k/
+│   │   └── manifest.json
+│   └── verified_baseline_q_o_2k/
+│       └── manifest.json
+├── .clang-format
+├── .gitattributes
+├── .gitignore
+├── .gitmodules
+├── .travis.yml
+├── CMakeLists.txt
+├── LICENSE
+├── Makefile
+├── README.md
+├── REPOSITORY_MANIFEST.md
+├── REPOSITORY_TREE.txt
+├── VALIDATION_REPORT.md
+└── requirements.txt

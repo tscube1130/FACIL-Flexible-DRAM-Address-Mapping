@@ -1,0 +1,4 @@
+READ  917,504/917,504 transactions | completion <= 8,240,960 cycles | time <= 2575.300 us | BW >= 45.60 GB/s
+WRITE 917,504/917,504 transactions | completion <= 1,862,112 cycles | time <= 581.910 us | BW >= 201.82 GB/s
+SERIALIZED COPY time <= 3157.210 us
+Saved: personB/results/verified_baseline_ffn_gate_up_2k/summary.json

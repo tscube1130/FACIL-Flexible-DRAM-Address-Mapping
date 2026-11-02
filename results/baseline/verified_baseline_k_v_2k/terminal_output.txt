@@ -1,0 +1,4 @@
+READ  65,536/65,536 transactions | completion <= 590,592 cycles | time <= 184.560 us | BW >= 45.45 GB/s
+WRITE 65,536/65,536 transactions | completion <= 131,584 cycles | time <= 41.120 us | BW >= 204.00 GB/s
+SERIALIZED COPY time <= 225.680 us
+Saved: personB/results/verified_baseline_k_v_2k/summary.json

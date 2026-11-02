@@ -72,21 +72,25 @@ TraceBasedCPU::TraceBasedCPU(const std::string& config_file,
 
 void TraceBasedCPU::ClockTick() {
     memory_system_.ClockTick();
-    if (!trace_file_.eof()) {
-        if (get_next_) {
+
+    // Read a new trace record only after the previous request was accepted.
+    // Do not re-issue the last transaction when extraction reaches EOF.
+    if (get_next_ && trace_file_.is_open()) {
+        if (trace_file_ >> trans_) {
             get_next_ = false;
-            trace_file_ >> trans_;
-        }
-        if (trans_.added_cycle <= clk_) {
-            get_next_ = memory_system_.WillAcceptTransaction(trans_.addr,
-                                                             trans_.is_write);
-            if (get_next_) {
-                memory_system_.AddTransaction(trans_.addr, trans_.is_write);
-            }
+        } else {
+            trace_file_.close();
         }
     }
+
+    // A parsed transaction remains pending until DRAMsim3 accepts it.
+    if (!get_next_ && trans_.added_cycle <= clk_ &&
+        memory_system_.WillAcceptTransaction(trans_.addr, trans_.is_write)) {
+        memory_system_.AddTransaction(trans_.addr, trans_.is_write);
+        get_next_ = true;
+    }
+
     clk_++;
-    return;
 }
 
 }  // namespace dramsim3

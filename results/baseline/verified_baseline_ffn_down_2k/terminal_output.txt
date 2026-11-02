@@ -1,0 +1,4 @@
+READ  917,504/917,504 transactions | completion <= 15,443,456 cycles | time <= 4826.080 us | BW >= 24.33 GB/s
+WRITE 917,504/917,504 transactions | completion <= 1,862,112 cycles | time <= 581.910 us | BW >= 201.82 GB/s
+SERIALIZED COPY time <= 5407.990 us
+Saved: personB/results/verified_baseline_ffn_down_2k/summary.json

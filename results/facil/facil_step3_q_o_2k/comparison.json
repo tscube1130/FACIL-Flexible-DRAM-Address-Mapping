@@ -1,0 +1,15 @@
+{
+  "matrix": "Q/O 4096x4096 FP16",
+  "mapid": 2,
+  "transactions": 262144,
+  "baseline_conventional_read": {
+    "cycles_upper_bound": 532444,
+    "time_us_upper_bound": 166.38875
+  },
+  "facil_mapped_read": {
+    "cycles_upper_bound": 2355200,
+    "time_us_upper_bound": 736.0
+  },
+  "previous_baseline_relayout_us": 901.92,
+  "note": "Sequential DRAM read proxy; not GPU GEMM or TTFT"
+}

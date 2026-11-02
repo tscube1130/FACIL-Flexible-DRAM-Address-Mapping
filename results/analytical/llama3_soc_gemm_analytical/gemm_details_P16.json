@@ -1,0 +1,69 @@
+{
+  "prefill_tokens": 16,
+  "projections": [
+    {
+      "name": "q_o",
+      "shape_m_k": [
+        4096,
+        4096
+      ],
+      "count_per_block": 2,
+      "weight_bytes_per_matrix": 33554432,
+      "input_bytes_per_matrix": 131072,
+      "output_bytes_per_matrix": 131072,
+      "flops_per_matrix": 536870912,
+      "compute_floor_ms_per_matrix": 0.012632256752941178,
+      "memory_floor_ms_per_matrix": 0.16512,
+      "roofline_ms_per_matrix": 0.16512,
+      "bottleneck": "memory"
+    },
+    {
+      "name": "k_v",
+      "shape_m_k": [
+        1024,
+        4096
+      ],
+      "count_per_block": 2,
+      "weight_bytes_per_matrix": 8388608,
+      "input_bytes_per_matrix": 131072,
+      "output_bytes_per_matrix": 32768,
+      "flops_per_matrix": 134217728,
+      "compute_floor_ms_per_matrix": 0.0031580641882352945,
+      "memory_floor_ms_per_matrix": 0.04176,
+      "roofline_ms_per_matrix": 0.04176,
+      "bottleneck": "memory"
+    },
+    {
+      "name": "ffn_gate_up",
+      "shape_m_k": [
+        14336,
+        4096
+      ],
+      "count_per_block": 2,
+      "weight_bytes_per_matrix": 117440512,
+      "input_bytes_per_matrix": 131072,
+      "output_bytes_per_matrix": 458752,
+      "flops_per_matrix": 1879048192,
+      "compute_floor_ms_per_matrix": 0.044212898635294116,
+      "memory_floor_ms_per_matrix": 0.5763199999999999,
+      "roofline_ms_per_matrix": 0.5763199999999999,
+      "bottleneck": "memory"
+    },
+    {
+      "name": "ffn_down",
+      "shape_m_k": [
+        4096,
+        14336
+      ],
+      "count_per_block": 1,
+      "weight_bytes_per_matrix": 117440512,
+      "input_bytes_per_matrix": 458752,
+      "output_bytes_per_matrix": 131072,
+      "flops_per_matrix": 1879048192,
+      "compute_floor_ms_per_matrix": 0.044212898635294116,
+      "memory_floor_ms_per_matrix": 0.5763199999999999,
+      "roofline_ms_per_matrix": 0.5763199999999999,
+      "bottleneck": "memory"
+    }
+  ]
+}

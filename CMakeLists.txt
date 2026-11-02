@@ -105,6 +105,7 @@ add_executable(dramsim3test EXCLUDE_FROM_ALL
     tests/test_dramsys.cc
     tests/test_hmcsys.cc # IDK somehow this can literally crush your computer
 )
+target_compile_definitions(dramsim3test PRIVATE CATCH_CONFIG_NO_POSIX_SIGNALS)
 target_link_libraries(dramsim3test Catch dramsim3)
 target_include_directories(dramsim3test PRIVATE src/)
 

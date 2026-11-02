@@ -29,8 +29,7 @@ BaseDRAMSystem::BaseDRAMSystem(Config &config, const std::string &output_dir,
 }
 
 int BaseDRAMSystem::GetChannel(uint64_t hex_addr) const {
-    hex_addr >>= config_.shift_bits;
-    return (hex_addr >> config_.ch_pos) & config_.ch_mask;
+    return config_.AddressMapping(hex_addr).channel;
 }
 
 void BaseDRAMSystem::PrintEpochStats() {

@@ -1,0 +1,18 @@
+{
+  "purpose": "Diagnose access-order effect, not reproduce full copy",
+  "original_sources": {
+    "read": "/home/sukhjot/DRAMsim3/DRAMsim3-master/personB/traces/llama3_k_v_permutation/copy_read.trace",
+    "write": "/home/sukhjot/DRAMsim3/DRAMsim3-master/personB/traces/llama3_k_v_permutation/copy_write.trace"
+  },
+  "transactions_per_stage": 32768,
+  "transaction_bytes_assumed": 128,
+  "physical_transaction_deduplication": true,
+  "same_addresses_within_each_comparison": true,
+  "same_request_arrival_times_within_each_comparison": true,
+  "facil_mapping": "Disabled; conventional baseline",
+  "sampling": "First N unique aligned transactions per stage",
+  "timing_measurement": "Binary search, 256-cycle resolution",
+  "read_completion": "All read callbacks observed",
+  "write_completion": "All write commands issued, not necessarily drained",
+  "limitation": "Sampled diagnostic does not directly replace the full-matrix 447.284 ms serialized re-layout estimate"
+}

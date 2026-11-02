@@ -1,0 +1,19 @@
+{
+  "scope": "Linear layers of batched decode only",
+  "dispatch_granularity": "Entire decode step, not each matrix",
+  "pim_scenarios_ms_per_token": {
+    "optimistic_100ns": 5.3248,
+    "illustrative_20ms": 20.0
+  },
+  "optimistic_100ns": "Hypothetical wave latency",
+  "illustrative_20ms": "Illustrative paper-informed scenario, not measured",
+  "eta": "Assumed SoC GEMM efficiency multiplier",
+  "rho": "Hypothetical PIM batch reuse; rho=0 main AiM-like assumption",
+  "excluded": [
+    "Attention and KV-cache",
+    "PIM synchronization/reduction overhead",
+    "SoC kernel launches",
+    "Engine-switching overhead",
+    "End-to-end decode latency"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "matrix_shape": [
+    1024,
+    4096
+  ],
+  "precision": "FP16",
+  "matrix_bytes": 8388608,
+  "mapid": 2,
+  "partition_required": false,
+  "dram_row_bytes": 2048,
+  "reference_chunk_bytes": 2048,
+  "requests_per_stage": 65536,
+  "transactions_per_stage": 65536,
+  "total_32B_fragments_checked": 262144,
+  "transaction_bytes": 128,
+  "total_read_write_bytes": 16777216,
+  "channel_read_requests": [
+    16384,
+    16384,
+    16384,
+    16384
+  ],
+  "source_base": "0x0",
+  "destination_base": "0x10000000",
+  "request_mapping_sha256": "57e160d95aef89c821a6964ef133b81a25d90c3256f0265cd3a1b6df4d91fee8",
+  "read_trace": "personB/traces/verified_baseline_k_v_2k/copy_read.trace",
+  "write_trace": "personB/traces/verified_baseline_k_v_2k/copy_write.trace",
+  "config_path": "configs/LPDDR5_6400_APPROX_v1.ini",
+  "config_sha256": "5e63201320da8ad26d1fccc08cbcabd5e758d9626bb0ea3e2ca88fca3b4ec8f4",
+  "facil_mapper_sha256": "c7c4969a8f60220bffdfa79ac2f288016366c3da2ecb32385be1f877e46ba000",
+  "read_trace_sha256": "a07c7879fd7608cccbb697ae4c80e62ec1a0eb812fe786786099195f84cdf462",
+  "write_trace_sha256": "283ced785ff78497824ffcc7c5897769e957443f505c7f4a31cd0dbb2f7e782a",
+  "limitations": "Uses static trace encoding into stock DRAMsim3 fixed decoder, not native MapID hardware. Read and write stages are separate; CPU byte movement, GPU GEMM and PIM GEMV not executed. LPDDR4 protocol with LPDDR5-like timings and an explicitly configured synthetic 2KiB bank row."
+}

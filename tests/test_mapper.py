@@ -4,7 +4,7 @@ import pathlib
 import sys
 import unittest
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / 'personA'))
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / 'mapping'))
 from facil_mapper import AiMMapper, PerHugePageMapper, Geometry, choose_mapid
 
 
