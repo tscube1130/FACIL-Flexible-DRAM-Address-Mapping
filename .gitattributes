@@ -1,0 +1,15 @@
+# Keep source portable and checksum-bearing evidence byte-exact.
+* text=auto eol=lf
+/results/** -text
+/traces/** -text
+/paper/** -text
+/configs/*.ini -text
+/mapping/facil_mapper.py -text
+*.png binary
+*.pdf binary
+# Original evidence retains CRLF records and deliberate EOF spacing.
+/results/** whitespace=cr-at-eol,-blank-at-eof
+/configs/*.ini whitespace=-blank-at-eof
+/docs/provenance/FACIL_PROJECT_LOG.md -whitespace
+/paper/** -whitespace
+/results/facil/facil_native_validation/channels_expected.txt -whitespace

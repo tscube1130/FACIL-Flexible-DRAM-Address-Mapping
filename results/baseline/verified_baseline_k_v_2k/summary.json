@@ -1,0 +1,27 @@
+{
+  "config": "configs/LPDDR5_6400_APPROX_v1.ini",
+  "tCK_ns": 0.3125,
+  "matrix_bytes": 8388608,
+  "note": "Serialized DRAM-only copy proxy, LPDDR4 protocol with LPDDR5-style timings",
+  "read": {
+    "cycles_upper_bound": 590592,
+    "completion_resolution_cycles": 256,
+    "completed_transactions": 65536,
+    "elapsed_us_upper_bound": 184.56,
+    "effective_bandwidth_GB_s_lower_bound": 45.451928912006935,
+    "statistics": "personB/results/verified_baseline_k_v_2k/read/dramsim3.txt"
+  },
+  "write": {
+    "cycles_upper_bound": 131584,
+    "completion_resolution_cycles": 256,
+    "completed_transactions": 65536,
+    "elapsed_us_upper_bound": 41.12,
+    "effective_bandwidth_GB_s_lower_bound": 204.00311284046694,
+    "statistics": "personB/results/verified_baseline_k_v_2k/write/dramsim3.txt"
+  },
+  "serialized_copy": {
+    "traffic_bytes": 16777216,
+    "estimated_time_us_upper_bound": 225.68,
+    "note": "Serialized stages cannot model overlap, element rearrangement, CPU/GPU cost or cache effects"
+  }
+}

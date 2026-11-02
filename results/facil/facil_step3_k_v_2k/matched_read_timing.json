@@ -1,0 +1,15 @@
+{
+  "matrix": "Llama3-8B K/V 1024x4096 FP16",
+  "experiment": "Matched sequential SoC weight reads",
+  "baseline": {
+    "cycles_upper_bound": 132616,
+    "time_us_upper_bound": 41.4425
+  },
+  "facil": {
+    "cycles_upper_bound": 590429,
+    "time_us_upper_bound": 184.5090625
+  },
+  "facil_to_baseline_read_time_ratio": 4.4521701755444285,
+  "config_sha256": "5e63201320da8ad26d1fccc08cbcabd5e758d9626bb0ea3e2ca88fca3b4ec8f4",
+  "limitations": "Memory-access proxy, not actual GPU GEMM timing"
+}

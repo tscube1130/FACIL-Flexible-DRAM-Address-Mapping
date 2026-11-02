@@ -1,48 +1,49 @@
-# project files
-build/
+# Local release preparation, credentials and machine-specific files
+.tools/
+.release_audit/
+.venv/
+.vscode/
+.idea/
+*.env
+.env
+.env.*
+# C++ / CMake / simulator products
+build*/
 debug_build/
-data/
-ext/SuperLU_MT_3.1/
-obj
-dramsim3
-dramsim3test
-dramsim3main
-*.log
-release
-.idea
-*.pyc
-*.vh
-.vs/
-
-# Compiled Object files
-*.slo
-*.lo
+release/
+obj/
 *.o
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
 *.a
 *.lib
-
-# Executables
+*.so
+*.so.*
+*.dll
+*.dylib
 *.exe
 *.out
-*.app
+dramsim3main
+dramsim3test
+native_verify
+# Python / editor caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.swp
+*.swo
+*~
+*:Zone.Identifier
+*Zone.Identifier
+# Default simulator outputs outside retained result directories
+/dramsim3*.json
+/dramsim3*.txt
+# Regenerable large traffic; small verification and diagnostic traces are explicitly added
+*.trace
+# Optional thermal submodule build products
+ext/SuperLU_MT_3.1/
 
-# IDEs / Editors
-.vscode/
+# Isolated verification and reproduction outputs
+.validation/
+.reproduce/

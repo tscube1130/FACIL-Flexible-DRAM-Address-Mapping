@@ -1,0 +1,111 @@
+{
+  "classification": "ANALYTICAL SCENARIO ONLY - not DRAMsim3/GPU measurement or full TTFT",
+  "model": "sum over each independent linear GEMM: max(FLOPs/peak_FLOPs_per_s, (weights+input+output)_bytes/peak_BW_bytes_per_s)",
+  "source_platform": "FACIL HPCA 2025 Table II: NVIDIA Jetson AGX Orin 64 GB",
+  "peak_fp16_flops_per_s": 42500000000000.0,
+  "peak_theoretical_dram_bandwidth_bytes_per_s": 204800000000.0,
+  "weight_dtype": "FP16",
+  "blocks": 32,
+  "projections": [
+    {
+      "name": "q_o",
+      "m": 4096,
+      "k": 4096,
+      "count_per_block": 2
+    },
+    {
+      "name": "k_v",
+      "m": 1024,
+      "k": 4096,
+      "count_per_block": 2
+    },
+    {
+      "name": "ffn_gate_up",
+      "m": 14336,
+      "k": 4096,
+      "count_per_block": 2
+    },
+    {
+      "name": "ffn_down",
+      "m": 4096,
+      "k": 14336,
+      "count_per_block": 1
+    }
+  ],
+  "results": [
+    {
+      "prefill_tokens": 8,
+      "linear_gemm_count": 224,
+      "weight_GiB": 13.0,
+      "input_output_MiB": 40.0,
+      "total_linear_flops_TF": 0.111669149696,
+      "peak_compute_floor_ms": 2.627509404611765,
+      "peak_memory_floor_ms": 68.36224,
+      "sum_per_gemm_ideal_roofline_ms": 68.36224,
+      "all_individual_gemms_memory_bound": true
+    },
+    {
+      "prefill_tokens": 16,
+      "linear_gemm_count": 224,
+      "weight_GiB": 13.0,
+      "input_output_MiB": 80.0,
+      "total_linear_flops_TF": 0.223338299392,
+      "peak_compute_floor_ms": 5.25501880922353,
+      "peak_memory_floor_ms": 68.56704,
+      "sum_per_gemm_ideal_roofline_ms": 68.56703999999999,
+      "all_individual_gemms_memory_bound": true
+    },
+    {
+      "prefill_tokens": 32,
+      "linear_gemm_count": 224,
+      "weight_GiB": 13.0,
+      "input_output_MiB": 160.0,
+      "total_linear_flops_TF": 0.446676598784,
+      "peak_compute_floor_ms": 10.51003761844706,
+      "peak_memory_floor_ms": 68.97664,
+      "sum_per_gemm_ideal_roofline_ms": 68.97663999999999,
+      "all_individual_gemms_memory_bound": true
+    },
+    {
+      "prefill_tokens": 64,
+      "linear_gemm_count": 224,
+      "weight_GiB": 13.0,
+      "input_output_MiB": 320.0,
+      "total_linear_flops_TF": 0.893353197568,
+      "peak_compute_floor_ms": 21.02007523689412,
+      "peak_memory_floor_ms": 69.79584,
+      "sum_per_gemm_ideal_roofline_ms": 69.79584,
+      "all_individual_gemms_memory_bound": true
+    },
+    {
+      "prefill_tokens": 128,
+      "linear_gemm_count": 224,
+      "weight_GiB": 13.0,
+      "input_output_MiB": 640.0,
+      "total_linear_flops_TF": 1.786706395136,
+      "peak_compute_floor_ms": 42.04015047378824,
+      "peak_memory_floor_ms": 71.43424,
+      "sum_per_gemm_ideal_roofline_ms": 71.43424,
+      "all_individual_gemms_memory_bound": true
+    }
+  ],
+  "excluded": [
+    "attention-score and attention-value GEMM",
+    "rotary embeddings",
+    "nonlinear activations and normalization",
+    "embedding and LM output head",
+    "KV-cache traffic",
+    "kernel launches and GPU utilization effects",
+    "re-layout",
+    "actual PIM decode GEMV",
+    "memory mapping penalty"
+  ],
+  "model_assumptions": [
+    "each independent GEMM loads weights once from external DRAM",
+    "each GEMM reads its activation input and writes its output once in FP16",
+    "all modeled transfers are charged at paper's theoretical peak bandwidth",
+    "ideal overlap of math and memory within each GEMM; no overlap assumed between separate GEMMs",
+    "all 7 linear projections per block for 32 blocks are counted; no attention/embedding/output-head computation"
+  ],
+  "script_sha256": "764a40ef6edd749bdb92fa7258360137b0b45ae14e914707c7b79cf652d9bec5"
+}

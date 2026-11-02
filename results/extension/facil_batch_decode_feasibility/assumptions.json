@@ -1,0 +1,17 @@
+{
+  "classification": "ANALYTICAL FEASIBILITY, NOT MEASURED DECODE",
+  "batch_range": "1 to 64 tokens per decode step",
+  "pim_model": "B * processing waves * assumed wave latency",
+  "soc_model": "Existing ideal roofline divided by assumed eta",
+  "eta": "Hypothetical effective SoC resource fraction",
+  "dispatch": "Choose faster engine independently per projection",
+  "baseline": "Always PIM, or one full re-layout followed by SoC",
+  "baseline_example_steps": 32,
+  "excluded": [
+    "Attention and KV cache",
+    "Actual batch memory pressure",
+    "PIM command, broadcast and reduction overhead",
+    "Engine switching and synchronization overhead",
+    "Actual GPU kernel utilization"
+  ]
+}

@@ -2,6 +2,8 @@
 #define __CONFIG_H
 
 #include <fstream>
+#include <map>
+#include <cstdint>
 #include <string>
 #include "common.h"
 
@@ -35,6 +37,7 @@ class Config {
    public:
     Config(std::string config_file, std::string out_dir);
     Address AddressMapping(uint64_t hex_addr) const;
+    bool HasFACILPage(uint64_t byte_addr) const;
     // DRAM physical structure
     DRAMProtocol protocol;
     int channel_size;
@@ -184,6 +187,10 @@ class Config {
 
    private:
     INIReader* reader_;
+    std::map<uint64_t, unsigned> facil_mapid_by_page_;
+    void LoadFACILPageMap();
+    Address FACILAddressMapping(uint64_t byte_addr,
+                                unsigned mapid) const;
     void CalculateSize();
     DRAMProtocol GetDRAMProtocol(std::string protocol_str);
     int GetInteger(const std::string& sec, const std::string& opt,

@@ -1,0 +1,52 @@
+{
+  "scope": "Llama3-8B linear projections only",
+  "decode_batch_traces": {
+    "rising": [
+      1,
+      4,
+      16,
+      32,
+      64
+    ],
+    "falling": [
+      64,
+      32,
+      16,
+      4,
+      1
+    ],
+    "oscillating": [
+      1,
+      32,
+      4,
+      64,
+      8,
+      48,
+      2,
+      64
+    ]
+  },
+  "engines": "PIM and SoC",
+  "policy": "One engine per entire decode step",
+  "offline_optimal": "Knows future steps; an upper bound",
+  "online_hysteresis": "Switch when current-step saving exceeds overhead",
+  "initial_engine": "Free choice at first step",
+  "facil_weight_copies": 1,
+  "duplication_weight_copies": 2,
+  "weight_bytes_per_copy": 13958643712,
+  "conversion_per_soc_pass_ms": {
+    "our_D\u200bRAMsim3_estimate": 447.28352,
+    "illustrative_paper_scale": 200
+  },
+  "on_demand_baseline": "Converts linear weights for every selected SoC pass; no persistent converted copy",
+  "switching_overhead": "Unmeasured; swept as a parameter",
+  "hmax": "Largest uniform transition overhead for which some offline mixed-engine schedule beats best static",
+  "excluded": [
+    "Attention",
+    "KV-cache traffic",
+    "Kernel launches",
+    "Actual PIM hardware switching cost",
+    "Memory capacity constraints on real devices",
+    "End-to-end decoding latency"
+  ]
+}

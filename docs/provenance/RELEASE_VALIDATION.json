@@ -1,0 +1,181 @@
+[
+  {
+    "check": "Active Python syntax",
+    "passed": true
+  },
+  {
+    "check": "Mapper and saved-evidence tests",
+    "passed": true,
+    "seconds": 0.6
+  },
+  {
+    "check": "Original C++ tests",
+    "passed": true,
+    "seconds": 0.09
+  },
+  {
+    "check": "Compile native MapID verifier",
+    "passed": true,
+    "seconds": 1.09
+  },
+  {
+    "check": "Native MapID 2/3 and conventional fallback",
+    "passed": true,
+    "seconds": 0.0
+  },
+  {
+    "check": "Mixed-page channel-routing smoke",
+    "passed": true,
+    "seconds": 0.02
+  },
+  {
+    "check": "One-WRITE EOF regression",
+    "passed": true,
+    "seconds": 0.01
+  },
+  {
+    "check": "EOF callback/command distinction",
+    "passed": true,
+    "write_callbacks": 1,
+    "write_commands_issued": 0,
+    "note": "A lone acknowledged write may remain buffered; this is not a write-drain test"
+  },
+  {
+    "check": "Baseline byte-layout correctness",
+    "passed": true,
+    "seconds": 1.4
+  },
+  {
+    "check": "SoC roofline self-test",
+    "passed": true,
+    "seconds": 0.06
+  },
+  {
+    "check": "SoC roofline reproduction",
+    "passed": true,
+    "seconds": 0.05
+  },
+  {
+    "check": "FACIL TTFT and comparison figures",
+    "passed": true,
+    "seconds": 1.75
+  },
+  {
+    "check": "Analytical PIM GEMV reproduction",
+    "passed": true,
+    "seconds": 0.42
+  },
+  {
+    "check": "PIM sensitivity figures",
+    "passed": true,
+    "seconds": 1.46
+  },
+  {
+    "check": "Batch feasibility",
+    "passed": true,
+    "seconds": 0.88
+  },
+  {
+    "check": "Experiments 1-2 crossover/sensitivity",
+    "passed": true,
+    "seconds": 1.59
+  },
+  {
+    "check": "Experiments 3-4 switching/policies",
+    "passed": true,
+    "seconds": 2.09
+  },
+  {
+    "check": "PIM timing budget",
+    "passed": true,
+    "seconds": 0.03
+  },
+  {
+    "check": "Earlier TTFT scenario preservation",
+    "passed": true,
+    "seconds": 0.03
+  },
+  {
+    "check": "Placement audit",
+    "passed": true,
+    "seconds": 10.06
+  },
+  {
+    "check": "Structural lockstep audit",
+    "passed": true,
+    "seconds": 0.32
+  },
+  {
+    "check": "Saved numerical outputs reproduced exactly",
+    "passed": true,
+    "files": [
+      "extension/facil_batch_decode_feasibility/batch_sweep.csv",
+      "extension/facil_batch_decode_feasibility/crossovers.csv",
+      "extension/facil_batch_decode_feasibility/assumptions.json",
+      "extension/facil_batch_exp12/batch_sweep.csv",
+      "extension/facil_batch_exp12/crossovers.csv",
+      "extension/facil_batch_exp12/assumptions.json",
+      "extension/facil_batch_exp34/weight_memory_comparison.csv",
+      "extension/facil_batch_exp34/dynamic_policy_results.csv",
+      "extension/facil_batch_exp34/switching_overhead_limits.csv",
+      "extension/facil_batch_exp34/assumptions.json",
+      "analytical/facil_pim_gemv_analytical/pim_gemv_model.json",
+      "analytical/facil_pim_gemv_analytical/pim_gemv_prefill_sensitivity.csv",
+      "analytical/llama3_soc_gemm_analytical/gemm_details_P16.json",
+      "analytical/llama3_soc_gemm_analytical/soc_gemm_roofline.csv",
+      "analytical/llama3_soc_gemm_analytical/assumptions_and_results.json",
+      "analytical/llama3_soc_gemm_analytical/gemm_details_P64.json",
+      "analytical/llama3_soc_gemm_analytical/gemm_details_P128.json",
+      "analytical/llama3_soc_gemm_analytical/gemm_details_P32.json",
+      "analytical/llama3_soc_gemm_analytical/gemm_details_P8.json",
+      "facil/facil_step6_comparison/ttft_comparison.csv",
+      "analytical/llama3_ttft/scenario.csv",
+      "mapping/llama3_validation/placement_audit/summary.json",
+      "mapping/llama3_validation/placement_audit/k_v_row_placement.csv",
+      "mapping/llama3_validation/placement_audit/ffn_down_row_placement.csv",
+      "mapping/llama3_validation/placement_audit/q_o_row_placement.csv",
+      "mapping/llama3_validation/placement_audit/ffn_gate_up_row_placement.csv",
+      "mapping/llama3_validation/lockstep_grouping/summary.json"
+    ]
+  },
+  {
+    "check": "Regenerate matched trace: q_o",
+    "passed": true,
+    "seconds": 0.25
+  },
+  {
+    "check": "Regenerate matched trace: k_v",
+    "passed": true,
+    "seconds": 0.08
+  },
+  {
+    "check": "Regenerate matched trace: ffn_gate_up",
+    "passed": true,
+    "seconds": 0.67
+  },
+  {
+    "check": "Regenerate matched trace: ffn_down",
+    "passed": true,
+    "seconds": 0.65
+  },
+  {
+    "check": "Regenerate baseline trace: q_o",
+    "passed": true,
+    "seconds": 5.24
+  },
+  {
+    "check": "Regenerate baseline trace: k_v",
+    "passed": true,
+    "seconds": 1.17
+  },
+  {
+    "check": "Regenerate baseline trace: ffn_gate_up",
+    "passed": true,
+    "seconds": 20.71
+  },
+  {
+    "check": "Regenerate baseline trace: ffn_down",
+    "passed": true,
+    "seconds": 20.15
+  }
+]

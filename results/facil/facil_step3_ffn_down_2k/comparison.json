@@ -1,0 +1,20 @@
+{
+  "matrix": "ffn_down",
+  "shape": [
+    4096,
+    14336
+  ],
+  "mapid": 3,
+  "transactions": 917504,
+  "baseline_conventional_read": {
+    "cycles_upper_bound": 1863362,
+    "time_us_upper_bound": 582.300625
+  },
+  "facil_native_read": {
+    "cycles_upper_bound": 15443456,
+    "time_us_upper_bound": 4826.08
+  },
+  "previous_baseline_relayout_us": 5407.99,
+  "config_sha256": "5e63201320da8ad26d1fccc08cbcabd5e758d9626bb0ea3e2ca88fca3b4ec8f4",
+  "note": "Sequential DRAM read proxy, not GEMM or TTFT"
+}

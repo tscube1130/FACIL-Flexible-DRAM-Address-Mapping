@@ -1,0 +1,5 @@
+policy,linear_weight_copies,weight_storage_GB,additional_weight_storage_GB,note
+Always PIM,1,13.9586,0,Static PIM execution
+Weight duplication + ideal dispatch,2,27.9173,13.9586,Same ideal latency as zero-overhead FACIL
+FACIL batch-aware dispatch,1,13.9586,0,Page mapping metadata not included
+On-demand re-layout,1,13.9586,0,Temporary conversion buffers not included

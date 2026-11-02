@@ -1,6 +1,11 @@
 #include "configuration.h"
 
 #include <vector>
+#include <cstdlib>
+#include <sstream>
+#include <iostream>
+#include <stdexcept>
+#include <cstdint>
 
 #ifdef THERMAL
 #include <math.h>
@@ -21,6 +26,7 @@ Config::Config(std::string config_file, std::string out_dir)
     InitDRAMParams();
     CalculateSize();
     SetAddressMapping();
+    LoadFACILPageMap();
     InitTimingParams();
     InitPowerParams();
     InitOtherParams();
@@ -30,7 +36,129 @@ Config::Config(std::string config_file, std::string out_dir)
     delete (reader_);
 }
 
+
+bool Config::HasFACILPage(uint64_t byte_addr) const {
+    return facil_mapid_by_page_.count(byte_addr >> 21) != 0;
+}
+
+Address Config::FACILAddressMapping(uint64_t addr,
+                                    unsigned mapid) const {
+    const int column_bits = LogBase2(columns) - LogBase2(BL);
+    const int ch_bits = LogBase2(channels);
+    const int rank_bits = LogBase2(ranks);
+    const int bank_bits = LogBase2(banks);
+    const int pu_bits = ch_bits + rank_bits + bank_bits;
+
+    const uint64_t chunk = addr >> 11;
+    const uint64_t row_low =
+        chunk & ((uint64_t(1) << mapid) - 1);
+    const uint64_t pu =
+        (chunk >> mapid) & ((uint64_t(1) << pu_bits) - 1);
+    const uint64_t row_high = chunk >> (mapid + pu_bits);
+
+    const uint64_t row = (row_high << mapid) | row_low;
+    const char* perm = std::getenv("FACIL_CHANNEL_XOR");
+    const uint64_t xor_ch =
+        (perm && perm[0] == '1' && perm[1] == 0) ? 1u : 0u;
+    const uint64_t ch =
+        (pu & ((uint64_t(1) << ch_bits) - 1)) ^ xor_ch;
+    const uint64_t rank =
+        (pu >> ch_bits) & ((uint64_t(1) << rank_bits) - 1);
+    const uint64_t bank =
+        (pu >> (ch_bits + rank_bits)) &
+        ((uint64_t(1) << bank_bits) - 1);
+    const uint64_t col =
+        (addr >> shift_bits) &
+        ((uint64_t(1) << column_bits) - 1);
+
+    if (row >= static_cast<uint64_t>(rows))
+        throw std::out_of_range("FACIL row exceeds capacity");
+
+    return Address(
+        static_cast<int>(ch),
+        static_cast<int>(rank),
+        static_cast<int>(bank / banks_per_group),
+        static_cast<int>(bank % banks_per_group),
+        static_cast<int>(row),
+        static_cast<int>(col)
+    );
+}
+
+void Config::LoadFACILPageMap() {
+    const char* path = std::getenv("FACIL_PAGE_MAP_FILE");
+    if (path == nullptr || *path == '\0') return;
+
+    if (protocol != DRAMProtocol::LPDDR4 ||
+        rows != 262144 || columns != 256 ||
+        device_width != 16 || bus_width != 64 ||
+        BL != 16 || request_size_bytes != 128 ||
+        columns * bus_width / 8 != 2048 ||
+        channels != 4 || ranks != 2 || banks != 16 ||
+        bankgroups != 4 || banks_per_group != 4) {
+        throw std::runtime_error(
+            "FACIL requires verified 2KiB DRAM geometry"
+        );
+    }
+
+    std::ifstream in(path);
+    if (!in)
+        throw std::runtime_error(
+            std::string("Cannot open page map: ") + path
+        );
+
+    std::string line;
+    int line_number = 0;
+    while (std::getline(in, line)) {
+        ++line_number;
+        const auto comment = line.find('#');
+        if (comment != std::string::npos)
+            line.erase(comment);
+
+        std::istringstream tokens(line);
+        uint64_t page = 0;
+        unsigned mapid = 0;
+
+        if (!(tokens >> page)) {
+            if (tokens.eof()) continue;
+            throw std::runtime_error(
+                "Invalid page map line " +
+                std::to_string(line_number)
+            );
+        }
+
+        std::string extra;
+        if (!(tokens >> mapid) ||
+            (tokens >> extra) ||
+            mapid > 3 ||
+            page >=
+                (uint64_t(rows) * banks * ranks *
+                 channels * 2048 / (1ULL << 21))) {
+            throw std::runtime_error(
+                "Invalid page/MapID at line " +
+                std::to_string(line_number)
+            );
+        }
+
+        if (!facil_mapid_by_page_.insert(
+                {page, mapid}).second) {
+            throw std::runtime_error(
+                "Duplicate FACIL huge page"
+            );
+        }
+    }
+
+    if (facil_mapid_by_page_.empty())
+        throw std::runtime_error("Empty FACIL page map");
+
+    std::cout << "FACIL MapID registry loaded: "
+              << facil_mapid_by_page_.size()
+              << " pages" << std::endl;
+}
+
 Address Config::AddressMapping(uint64_t hex_addr) const {
+    const auto it = facil_mapid_by_page_.find(hex_addr >> 21);
+    if (it != facil_mapid_by_page_.end())
+        return FACILAddressMapping(hex_addr, it->second);
     hex_addr >>= shift_bits;
     int channel = (hex_addr >> ch_pos) & ch_mask;
     int rank = (hex_addr >> ra_pos) & ra_mask;
