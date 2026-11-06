@@ -6,6 +6,8 @@ Reduced-scope IIT Guwahati coursework reproduction of **FACIL (HPCA 2025)**, bui
 
 The native changes model address mapping and channel routing. They implement neither PIM MAC execution nor OS page-table extensions. All SoC/PIM execution latencies are explicitly analytical; simulator traffic measurements are identified separately.
 
+**Preparing for the viva?** The [40-question evidence map](docs/FACIL_VIVA.md) links each answer to source code, configuration, tests, or raw results and lists the demonstration assignments for all four members.
+
 ## Attribution
 
 Original paper: Seong Hoon Seo, Junghoon Kim, Donghyun Lee, Seonah Yoo, Seokwon Moon, Yeonhong Park, and Jae W. Lee, **“FACIL: Flexible DRAM Address Mapping for SoC-PIM Cooperative On-device LLM Inference,” HPCA 2025**, pp. 1720–1733. [DOI](https://doi.org/10.1109/HPCA61900.2025.00127) · [Author-hosted paper](https://99dhl.github.io/assets/pdf/hpca25_facil.pdf).
@@ -86,7 +88,7 @@ The saved projection-only prefill proxies are **515.646–518.718 ms** for basel
 
 For a batch of independent decode token vectors, the model compares SoC GEMM and PIM GEMV costs and chooses **one engine for the whole decode step**. Feasibility also retains an earlier per-projection screening model; its decision granularity must not be confused with the final whole-step policy.
 
-The extension uses FACIL’s single-copy shared mapping. **It does not duplicate weights.** Two-copy storage is a conceptual comparison baseline that attains the same ideal zero-transition-cost dispatch latency at an additional memory cost.
+The extension uses FACIL’s single-copy shared mapping. **It does not duplicate weights.** The dispatch model uses a conceptual two-copy baseline with the same ideal zero-transition-cost latency and an additional storage cost. A separate [native K/V two-copy experiment](results/facil/facil_two_copy_k_v_2k) verifies two-region placement and compares simulated SoC read throughput for the shared and conventional layouts.
 
 | Experiment | Question | Original evidence |
 | --- | --- | --- |

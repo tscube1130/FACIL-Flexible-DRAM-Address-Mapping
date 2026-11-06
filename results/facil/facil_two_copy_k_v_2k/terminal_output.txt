@@ -1,0 +1,21 @@
+test_chunk_contiguity_within_bank_and_dram_row (test_mapper.MappingTests.test_chunk_contiguity_within_bank_and_dram_row) ... ok
+test_fig8_chunk_offset_and_col_bits (test_mapper.MappingTests.test_fig8_chunk_offset_and_col_bits) ... ok
+test_four_channel_two_rank_changes_mapid (test_mapper.MappingTests.test_four_channel_two_rank_changes_mapid) ... ok
+test_invertibility_entire_huge_page (test_mapper.MappingTests.test_invertibility_entire_huge_page) ... ok
+test_large_matrix_row_partition (test_mapper.MappingTests.test_large_matrix_row_partition) ... ok
+test_nonpow2_row_mapid_not_promised_bank_confinement (test_mapper.MappingTests.test_nonpow2_row_mapid_not_promised_bank_confinement) ... ok
+test_paper_figure10_mapids (test_mapper.MappingTests.test_paper_figure10_mapids) ... ok
+test_per_page_mapid_no_alias_across_pages (test_mapper.MappingTests.test_per_page_mapid_no_alias_across_pages) ... ok
+test_power_of_two_llama_shapes (test_mapper.MappingTests.test_power_of_two_llama_shapes) ... ok
+test_small_matrix_row_stays_on_one_pu (test_mapper.MappingTests.test_small_matrix_row_stays_on_one_pu) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.427s
+
+OK
+TWO-COPY PLACEMENT: PASS
+facil: 65,536 reads, 0 writes, 590,416 cycles, 184.505000 us, 45.465 GB/s; channels [16384, 16384, 16384, 16384]
+duplication: 65,536 reads, 0 writes, 132,517 cycles, 41.411563 us, 202.567 GB/s; channels [16384, 16384, 16384, 16384]
+MATCHED READ COMPARISON: PASS
+Reference trace comparison: PASS (both traces byte-identical to prior K/V runs)
+Reference minus first completion cycle: FACIL 13; conventional 99

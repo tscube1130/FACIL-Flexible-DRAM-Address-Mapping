@@ -1,0 +1,3 @@
+case,transactions,bytes_requested,cycles,latency_us,bandwidth_gb_s,kv_storage_mib,model_storage_gib,model_storage_gb,pim_placement
+facil,65536,8388608,590416,184.505,45.465477900327905,8,13,13.958643712,verified
+duplication,65536,8388608,132517,41.4115625,202.56680727755685,16,26,27.917287424,verified

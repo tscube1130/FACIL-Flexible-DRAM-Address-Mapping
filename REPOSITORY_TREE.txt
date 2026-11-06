@@ -1,6 +1,6 @@
 FACIL repository — tracked release tree
 
-397 files; build, scratch and credential directories are excluded.
+415 files; build, scratch and credential directories are excluded.
 
 FACIL-Flexible-DRAM-Address-Mapping/
 ├── .github/
@@ -105,6 +105,7 @@ FACIL-Flexible-DRAM-Address-Mapping/
 │   │   └── VALIDATED_ENVIRONMENT.json
 │   ├── upstream/
 │   │   └── DRAMSIM3_README.md
+│   ├── FACIL_VIVA.md
 │   ├── LIMITATIONS.md
 │   ├── METHODOLOGY.md
 │   ├── REPORT_RECONCILIATION.md
@@ -135,7 +136,8 @@ FACIL-Flexible-DRAM-Address-Mapping/
 │   │   ├── compare_facil_reads.py
 │   │   ├── facil_comparison_figures.py
 │   │   ├── facil_weight_access_comparison.py
-│   │   └── generate_matched_read_traces.py
+│   │   ├── generate_matched_read_traces.py
+│   │   └── two_copy_k_v.py
 │   ├── __init__.py
 │   └── paths.py
 ├── ext/
@@ -388,6 +390,26 @@ FACIL-Flexible-DRAM-Address-Mapping/
 │   │   │   ├── ttft_comparison.csv
 │   │   │   ├── ttft_comparison.png
 │   │   │   └── ttft_speedups.png
+│   │   ├── facil_two_copy_k_v_2k/
+│   │   │   ├── run/
+│   │   │   │   ├── duplication/
+│   │   │   │   │   ├── dramsim3.json
+│   │   │   │   │   └── dramsim3.txt
+│   │   │   │   ├── facil/
+│   │   │   │   │   ├── dramsim3.json
+│   │   │   │   │   └── dramsim3.txt
+│   │   │   │   ├── mixed/
+│   │   │   │   │   ├── dramsim3.json
+│   │   │   │   │   └── dramsim3.txt
+│   │   │   │   ├── assumptions.json
+│   │   │   │   ├── comparison.png
+│   │   │   │   ├── duplication_vs_facil.csv
+│   │   │   │   ├── mixed.trace
+│   │   │   │   ├── pages.txt
+│   │   │   │   ├── placement_validation.json
+│   │   │   │   └── scan_trace_sha256.txt
+│   │   │   ├── README.md
+│   │   │   └── terminal_output.txt
 │   │   └── padding_negative_evidence/
 │   │       ├── comparison.json
 │   │       └── ffn_padding_sample_comparison.png
@@ -461,7 +483,8 @@ FACIL-Flexible-DRAM-Address-Mapping/
 │   └── timing.h
 ├── tests/
 │   ├── native/
-│   │   └── verify_facil_decoder.cc
+│   │   ├── verify_facil_decoder.cc
+│   │   └── verify_two_copy_decoder.cc
 │   ├── example.trace
 │   ├── test_config.cc
 │   ├── test_dramsys.cc

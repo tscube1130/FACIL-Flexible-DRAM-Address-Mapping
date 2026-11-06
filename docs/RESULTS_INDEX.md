@@ -1,5 +1,7 @@
 # Results and producing code
 
+For presentation questions and team demonstrations, see the [viva evidence map](FACIL_VIVA.md). The [native K/V two-copy study](../results/facil/facil_two_copy_k_v_2k) links the matched scan CSV, original raw statistics, and placement audit.
+
 All `results/` entries below are original local evidence. Reconstructed CSVs from the submission authoring package are not substituted for native simulator output. The supplied manuscript keeps its original script labels; [rename mapping](SCRIPT_RENAMES.csv) identifies the corresponding release scripts.
 
 | Report item | Producing code | Evidence |

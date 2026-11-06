@@ -6,6 +6,8 @@ Original Git commit ancestry, native simulator source/build definitions/configur
 
 Code lives in `mapping/` and categorized `experiments/`. Evidence lives in grouped `results/`. See [script renames](docs/SCRIPT_RENAMES.csv), [result index](docs/RESULTS_INDEX.md) and [tree](REPOSITORY_TREE.txt).
 
+The [viva evidence map](docs/FACIL_VIVA.md) links all 40 preparation questions to these files. The [K/V two-copy study](results/facil/facil_two_copy_k_v_2k) includes the original result files, native verifier, and runner. Its small mixed-routing input is retained with the raw counters. The two complete scans are regenerated and checked against recorded SHA-256 digests.
+
 ## Excluded from the release tip
 
 Build trees, binaries/libraries, Python/editor caches, security sidecars, temporary outputs, duplicate submission directories, source ZIPs, obsolete report/presentation copies, local CLI/credentials, private preparation snapshots, and third-party paper PDFs. The old copy-size presentation variants and incomplete smoke/debug outputs are not final scientific results. Older commits remain in history because history is intentionally preserved.

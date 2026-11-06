@@ -128,6 +128,10 @@ python -B experiments/extension/relayout_bandwidth_diagnostic.py
 
 This bounded multi-run diagnostic was not rerun during release preparation. Saved evidence was checked read-only: 32,768 distinct transactions/stage, equal address sets and offered times per order comparison, source sampling equivalence, native counters and B/ns arithmetic. READ conditions count completed reads; WRITE conditions count issued commands.
 
+## Optional K/V two-copy replay
+
+The [K/V comparison](../results/facil/facil_two_copy_k_v_2k#replay) has its own runner and native verifier. It checks disjoint placement and mixed routing, regenerates both scan streams, and finds the first cycle budget that completes each scan. This experiment is separate from the sampled access-order diagnostic.
+
 ## Path configuration and safety
 
 `experiments/paths.py` exposes optional `FACIL_RESULTS_ROOT`, `FACIL_TRACES_ROOT`, `FACIL_SIM_BINARY`, and `FACIL_CONFIG` overrides. Defaults select this repository and the current corrected configuration. The baseline trace generator intentionally keeps outputs inside the repository and refuses overwrites. Always clear `FACIL_PAGE_MAP_FILE` and `FACIL_CHANNEL_XOR` for conventional measurements; the release validator does so explicitly.
