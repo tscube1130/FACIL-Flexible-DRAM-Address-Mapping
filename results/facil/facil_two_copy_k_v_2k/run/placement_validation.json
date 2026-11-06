@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "shape": [
+    1024,
+    4096
+  ],
+  "dtype": "FP16",
+  "model": "Both addresses for logical byte offset i refer to the same matrix byte i.",
+  "regions_end_exclusive": {
+    "pim": [
+      0,
+      8388608
+    ],
+    "soc": [
+      268435456,
+      276824064
+    ]
+  },
+  "page_bytes": 2097152,
+  "pim_mapid": 2,
+  "soc_registered_pages": 0,
+  "native_transactions_checked_per_copy": 65536,
+  "unique_native_dram_tuples": 131072,
+  "chunks_checked": 4096,
+  "pim_processing_units_per_matrix_row": 1,
+  "mixed_expected_reads_per_channel": [
+    128,
+    128,
+    128,
+    128
+  ],
+  "mixed_measured_reads_per_channel": [
+    128,
+    128,
+    128,
+    128
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "measured": "Native DRAMsim3 read completions and simulated cycles.",
+  "calculated": [
+    "Effective scan bandwidth",
+    "Latency ratios",
+    "Weight storage"
+  ],
+  "assumed": [
+    "Preplaced copies",
+    "Shared row-major FP16 logical offsets",
+    "Cold sequential scan, one eligible read per cycle",
+    "LPDDR4 protocol with LPDDR5-6400 approximate timing"
+  ],
+  "unmeasured": [
+    "Physical weight bytes",
+    "GPU GEMM",
+    "PIM arithmetic",
+    "Switching and re-layout timing",
+    "Full decode or inference latency"
+  ],
+  "model_matrices": 224,
+  "request_bytes": 128,
+  "tck_ns": 0.3125,
+  "dram_row_bytes": 2048,
+  "config_sha256": "5e63201320da8ad26d1fccc08cbcabd5e758d9626bb0ea3e2ca88fca3b4ec8f4",
+  "simulator_sha256": "d3330f55ddba5faf05201b3d44932c1efb5e34a2966c09174434c46b63286c92",
+  "native_library_sha256": "0c6f26460136bd47ae5db39647ac5888e6744163109ec11ee4a42dc64f20f2be",
+  "mapper_sha256": "c7c4969a8f60220bffdfa79ac2f288016366c3da2ecb32385be1f877e46ba000",
+  "completion": "First integer cycle budget with all read callbacks counted and no writes.",
+  "reference": {
+    "matrix": "Llama3-8B K/V 1024x4096 FP16",
+    "experiment": "Matched sequential SoC weight reads",
+    "baseline": {
+      "cycles_upper_bound": 132616,
+      "time_us_upper_bound": 41.4425
+    },
+    "facil": {
+      "cycles_upper_bound": 590429,
+      "time_us_upper_bound": 184.5090625
+    },
+    "facil_to_baseline_read_time_ratio": 4.4521701755444285,
+    "config_sha256": "5e63201320da8ad26d1fccc08cbcabd5e758d9626bb0ea3e2ca88fca3b4ec8f4",
+    "limitations": "Memory-access proxy, not actual GPU GEMM timing"
+  },
+  "reference_minus_new_cycles": {
+    "facil": 13,
+    "duplication": 99
+  },
+  "duplication_latency_savings_us": 143.0934375,
+  "duplication_latency_reduction_fraction": 0.7755531692908051,
+  "duplication_bandwidth_gain_fraction": 3.4553981753284484,
+  "duplication_scan_speedup": 4.455398175328448
+}
