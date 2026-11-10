@@ -8,6 +8,13 @@ The native changes model address mapping and channel routing. They implement nei
 
 **Preparing for the viva?** The [40-question evidence map](docs/FACIL_VIVA.md) links each answer to source code, configuration, tests, or raw results and lists the demonstration assignments for all four members.
 
+## Final Group 9 submission
+
+- [IEEE report](paper/submission/G9-report.pdf) and [LaTeX source](paper/submission/report_source/)
+- [Presentation](paper/submission/FACIL_G9_Presentation.pdf)
+- [Baseline results](paper/submission/Baseline_Results.pdf)
+- [Contribution results](paper/submission/Contribution_Results.pdf)
+
 ## Attribution
 
 Original paper: Seong Hoon Seo, Junghoon Kim, Donghyun Lee, Seonah Yoo, Seokwon Moon, Yeonhong Park, and Jae W. Lee, **“FACIL: Flexible DRAM Address Mapping for SoC-PIM Cooperative On-device LLM Inference,” HPCA 2025**, pp. 1720–1733. [DOI](https://doi.org/10.1109/HPCA61900.2025.00127) · [Author-hosted paper](https://99dhl.github.io/assets/pdf/hpca25_facil.pdf).
